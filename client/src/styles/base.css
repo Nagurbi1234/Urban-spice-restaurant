@@ -1,0 +1,226 @@
+:root {
+  --color-cream: #f7f1e8;
+  --color-cream-2: #fbf6ef;
+  --color-tan: #e9dfd0;
+  --color-tan-border: #ddcfbd;
+  --color-tan-border-2: #cbbba7;
+  --color-brown-deep: #54251e;
+  --color-brown-mid: #612d24;
+  --color-brown-line: #73483a;
+  --color-brown-line-2: #9a7258;
+  --color-rust: #a34d2d;
+  --color-rust-hover: #833a25;
+  --color-gold: #e3b957;
+  --color-gold-hover: #f2d78e;
+  --color-text-deep: #54251e;
+  --color-text-mid: #806b59;
+  --color-text-muted: #9c8064;
+  --color-text-light: #d9c4ad;
+  --color-text-light-2: #b9977d;
+  --color-cream-text: #f7ead9;
+  --color-cream-text-2: #fff7ec;
+  --color-error-bg: #fff3ee;
+  --color-error-border: #e3b4a5;
+  --color-error-text: #833a25;
+  --color-error-text-2: #8d5e4f;
+  --color-success-bg: #e5efdc;
+  --color-success-text: #49663e;
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text-deep);
+  background: var(--color-cream-2);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 40px;
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 14px 24px;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+
+.btn-gold {
+  background: var(--color-gold);
+  color: var(--color-brown-deep);
+}
+.btn-gold:hover {
+  background: var(--color-gold-hover);
+}
+.btn-gold:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-rust {
+  background: var(--color-rust);
+  color: var(--color-cream-text-2);
+}
+.btn-rust:hover {
+  background: var(--color-rust-hover);
+}
+.btn-rust:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-outline {
+  border: 1px solid var(--color-brown-line-2);
+  color: var(--color-cream-text);
+}
+.btn-outline:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+.eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  color: var(--color-rust);
+}
+
+.field {
+  display: block;
+}
+.field-label {
+  font-size: 12px;
+  color: var(--color-text-mid);
+}
+.field-label.dark {
+  color: var(--color-text-light);
+}
+.field-input {
+  margin-top: 8px;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--color-tan-border-2);
+  background: transparent;
+  padding: 8px 0;
+  font-size: 14px;
+  color: var(--color-text-deep);
+  outline: none;
+}
+.field-input.dark {
+  border-bottom-color: var(--color-brown-line-2);
+  color: var(--color-cream-text);
+}
+.field-input::placeholder {
+  color: var(--color-text-light-2);
+}
+
+.loading-block {
+  border: 1px solid var(--color-tan-border);
+  background: var(--color-cream-2);
+  padding: 32px;
+}
+.loading-bar {
+  height: 12px;
+  background: var(--color-tan);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.error-block {
+  border: 1px solid var(--color-error-border);
+  background: var(--color-error-bg);
+  padding: 32px;
+}
+
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.grid-auto-2 {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+  .grid-auto-2 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .grid-auto-3 { grid-template-columns: repeat(3, 1fr); }
+}
+.grid-auto-3 {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+  .grid-auto-3 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .grid-auto-3 { grid-template-columns: repeat(3, 1fr); }
+}

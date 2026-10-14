@@ -1,0 +1,211 @@
+/* PageFrame */
+.page-frame {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 64px 20px 48px;
+}
+@media (min-width: 1024px) {
+  .page-frame { padding: 96px 40px 80px; }
+}
+.page-frame.dark {
+  background: var(--color-brown-deep);
+  color: var(--color-cream-text);
+}
+.page-title {
+  margin-top: 16px;
+  max-width: 900px;
+  font-size: 48px;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+}
+@media (min-width: 640px) { .page-title { font-size: 60px; } }
+@media (min-width: 1024px) { .page-title { font-size: 96px; } }
+.page-intro {
+  margin-top: 24px;
+  max-width: 560px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--color-text-mid);
+}
+.page-intro.dark {
+  color: #dfcdb9;
+}
+
+/* Dish card */
+.dish-card {
+  overflow: hidden;
+  border-radius: 2px;
+  border: 1px solid var(--color-tan-border);
+  background: var(--color-cream-2);
+  box-shadow: 0 8px 30px rgba(87, 48, 27, 0.06);
+}
+.dish-card-image-wrap {
+  position: relative;
+  aspect-ratio: 1.15;
+  overflow: hidden;
+  background: var(--color-tan);
+}
+.dish-card-image-wrap img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.7s;
+}
+.dish-card:hover .dish-card-image-wrap img {
+  transform: scale(1.05);
+}
+.dish-card-tag {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  background: rgba(247, 241, 232, 0.9);
+  padding: 4px 8px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--color-brown-deep);
+}
+.dish-card-veg {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  border-radius: 999px;
+  border: 1px solid #d5e1c8;
+  background: #f0f4e9;
+  padding: 4px 8px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-success-text);
+}
+.dish-card-body {
+  padding: 20px;
+}
+.dish-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+.dish-card-head h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--color-brown-deep);
+}
+.dish-card-price {
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-rust);
+}
+.dish-card-desc {
+  margin-top: 8px;
+  min-height: 40px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--color-text-mid);
+}
+.dish-card-footer {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #eadfce;
+  padding-top: 16px;
+}
+.dish-card-rating {
+  font-size: 12px;
+  font-weight: 600;
+  color: #8d745c;
+}
+.dish-card-add {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-rust);
+}
+.dish-card-add:hover {
+  color: var(--color-brown-deep);
+}
+
+/* Quantity control */
+.qty-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  border: 1px solid var(--color-tan-border);
+  background: var(--color-cream);
+  padding: 4px 8px;
+}
+.qty-control button {
+  display: grid;
+  place-items: center;
+  height: 24px;
+  width: 24px;
+  color: var(--color-rust);
+}
+.qty-control span {
+  min-width: 16px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Empty state / dashed box */
+.dashed-box {
+  border: 1px dashed var(--color-tan-border-2);
+  padding: 48px;
+  text-align: center;
+}
+.dashed-box svg {
+  margin: 0 auto;
+  color: var(--color-rust);
+}
+.dashed-box h3 {
+  margin-top: 16px;
+  font-family: var(--font-display);
+  font-size: 30px;
+  color: var(--color-brown-deep);
+}
+.dashed-box p {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--color-text-mid);
+}
+
+/* status pills */
+.pill {
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+.pill-green {
+  background: var(--color-success-bg);
+  color: var(--color-success-text);
+}
+
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-rust);
+}
+.link-arrow.underline {
+  border-bottom: 1px solid var(--color-rust);
+  padding-bottom: 8px;
+  width: fit-content;
+}
